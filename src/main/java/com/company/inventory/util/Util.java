@@ -1,7 +1,6 @@
 package com.company.inventory.util;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.util.zip.DataFormatException;
 import java.util.zip.Deflater;
 import java.util.zip.Inflater;
@@ -20,10 +19,6 @@ public class Util {
 				int count = deflater.deflate(buffer);
 				outputStream.write(buffer, 0, count);
 			}
-			try {
-				outputStream.close();
-			} catch (IOException e) {
-			}
 			System.out.println("Compressed Image Byte Size - " + outputStream.toByteArray().length);
 
 			return outputStream.toByteArray();
@@ -40,8 +35,6 @@ public class Util {
 					int count = inflater.inflate(buffer);
 					outputStream.write(buffer, 0, count);
 				}
-				outputStream.close();
-			} catch (IOException ioe) {
 			} catch (DataFormatException e) {
 			}
 			return outputStream.toByteArray();

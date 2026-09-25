@@ -53,8 +53,6 @@ public class ProductExcelExporter {
 		
 		if(value instanceof Integer) {
 			cell.setCellValue((Integer) value);
-		} else if(value instanceof Boolean) {
-			cell.setCellValue((Boolean) value);
 		} else {
 			cell.setCellValue((String) value);
 		}
